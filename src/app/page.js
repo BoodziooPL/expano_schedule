@@ -1,10 +1,14 @@
-import Image from "next/image";
 import Nav from "./Nav";
 import Table from "./Table"
+import connection from "./db";
+
+
 
 export default function Home() {
-  return (
-    
+  
+{connection}
+  
+  return ( 
     <div>
     <Nav />
     <Table />

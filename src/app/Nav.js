@@ -14,13 +14,13 @@ import {
 export default function Nav() {
   return (
     <nav className='flex w-full items-center justify-items-center justify-around'>
-      <Image src={Expano} width={300} height={200} alt="Expano company logo" />
+      <Image src={Expano} width={300} height={200} className='xl:w-1/5' alt="Expano company logo" />
       
       <DropdownMenu>
       <DropdownMenuTrigger>
-        <Avatar className="cursor-pointer">
+        <Avatar className="cursor-pointer xl:w-full avatar-Image">
             <AvatarImage src="https://github.com/shadcn.png" />
-            <AvatarFallback>CN</AvatarFallback>
+            <AvatarFallback>US</AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent>

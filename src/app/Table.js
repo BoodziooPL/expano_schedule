@@ -1,4 +1,4 @@
-
+'use client'
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -30,14 +30,22 @@ import {
     PaginationPrevious,
   } from "@/components/ui/pagination"
 
+  import {
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
+  } from "@/components/ui/popover"
+
+
 export default function table() {
   return (
+    <div>
     <main className='flex flex-col mx-auto mt-6 w-3/4 items-center justify-items-center justify-around'>
         <Table>
  
   <TableHeader>
     <TableRow>
-      <TableHead className="w-1/6 text-center">Pracownik</TableHead>
+      <TableHead className="w-1/6 ">Pracownik</TableHead>
       <TableHead className="w-1/6 text-center">12.03.2024</TableHead>
       <TableHead className="w-1/6 text-center">13.03.2024</TableHead>
       <TableHead className="w-1/6 text-center">14.03.2024</TableHead>
@@ -47,7 +55,12 @@ export default function table() {
   </TableHeader>
   <TableBody>
     <TableRow>
-      <TableCell className="font-medium w-1/6 cursor-pointer text-center">Jan Kowalski</TableCell>
+
+
+      <Popover className="w-1/6 font-medium w-1/6 cursor-pointer text-center relative">
+        <PopoverTrigger> <TableCell className="font-bold">Jan Kowalski</TableCell></PopoverTrigger>
+        <PopoverContent className="flex absolute mx-auto my-auto">Place content for the popover here.</PopoverContent>
+      </Popover>
       <TableCell className="w-1/6 text-center">6-14</TableCell>
       <TableCell className="w-1/6 text-center">6-14</TableCell>
       <TableCell className="w-1/6 text-center">6-14</TableCell>
@@ -71,5 +84,6 @@ export default function table() {
   </PaginationContent>
 </Pagination>
     </main>
+    </div>
   );
 }
