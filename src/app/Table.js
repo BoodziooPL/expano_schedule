@@ -1,4 +1,13 @@
 'use client'
+
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -36,16 +45,29 @@ import {
     PopoverTrigger,
   } from "@/components/ui/popover"
 
+  import AddCircleSharpIcon from '@mui/icons-material/AddCircleSharp';
+
 
 export default function table() {
   return (
-    <div>
-    <main className='flex flex-col mx-auto mt-6 w-3/4 items-center justify-items-center justify-around'>
-        <Table>
+<div>
+<main className='flex flex-col mx-auto mt-6 w-3/4 items-center justify-items-center justify-around'>
+<Table>
  
   <TableHeader>
     <TableRow>
-      <TableHead className="w-1/6 ">Pracownik</TableHead>
+      <TableHead className="w-1/6 ">
+      <Select>
+          <SelectTrigger className="w-full">
+          <SelectValue placeholder="Pracownik" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="light">Light</SelectItem>
+            <SelectItem value="dark">Dark</SelectItem>
+            <SelectItem value="system">System</SelectItem>
+          </SelectContent>
+          </Select>
+      </TableHead>
       <TableHead className="w-1/6 text-center">12.03.2024</TableHead>
       <TableHead className="w-1/6 text-center">13.03.2024</TableHead>
       <TableHead className="w-1/6 text-center">14.03.2024</TableHead>
@@ -58,7 +80,7 @@ export default function table() {
 
 
       <Popover className="w-1/6 font-medium w-1/6 cursor-pointer text-center relative">
-        <PopoverTrigger> <TableCell className="font-bold">Jan Kowalski</TableCell></PopoverTrigger>
+        <PopoverTrigger> <TableCell className="font-bold text-center">Jan Kowalski</TableCell></PopoverTrigger>
         <PopoverContent className="flex absolute mx-auto my-auto">Place content for the popover here.</PopoverContent>
       </Popover>
       <TableCell className="w-1/6 text-center">6-14</TableCell>
@@ -83,7 +105,7 @@ export default function table() {
     </PaginationItem>
   </PaginationContent>
 </Pagination>
-    </main>
-    </div>
+</main>
+</div>
   );
 }
